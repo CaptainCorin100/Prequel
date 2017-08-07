@@ -1,3 +1,17 @@
 #home_nav {
-	background-color:#3e4f1a;
+	background-color:#666666;
+	height:50%;
+	width:100%;
+	border-radius:10px;
+}
+.home_nav_button {
+	background-color:#333333;
+	height:100%;
+	width:20%;
+	text-align:center;
+	border-radius:10px;
+	font-family: 'Roboto', sans-serif;
+}
+body {
+	background-image:url("https://s-media-cache-ak0.pinimg.com/originals/b5/05/e9/b505e90552d3fb7e7601de546020b635.jpg");
 }
