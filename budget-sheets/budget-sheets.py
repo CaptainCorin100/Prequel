@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     if "username" in session:
-        return render_template("home.html")
+        return render_template("home.html", stylesheet=url_for("static" filename="style.css"))
     else:
         return render_template("home.html")
 
