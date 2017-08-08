@@ -1,6 +1,5 @@
 #home_nav {
-	background:#299277;
-	background:linear-gradient(#af546b, #555555);
+	background:linear-gradient(#3992a0, #FFFFFF);
 	height:10vh;
 	width:99vw;
 	border-radius:10px;
@@ -40,9 +39,10 @@ input[type=text]:focus {
 	background:#F88995;
 	background:linear-gradient(#3992a0, #eeeeee);
 	box-shadow:4px 4px 5px #99aa99;
+	font-size:200%;
 }
 .home_nav_button {
-	background-color:#3992a0;
+	background-color:#A992AD;
 	transition:background-color 0.6s;
 	height:100%;
 	width:8%;
@@ -50,7 +50,7 @@ input[type=text]:focus {
 	font-size:200%;
 	border-radius:10px;
 	margin:none;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Didact Gothic', sans-serif;
 }
 .home_nav_button:hover {
 	background-color:#00a7d1;
