@@ -12,9 +12,28 @@
 #home_body_right {
 	float:right;
 }
+<<<<<<< Updated upstream
 #home_nav_break {
 	width:1px;
 	height:100%;
+=======
+#stats_panel {
+	width:99vw;
+	height:80vh;
+	background:#999999;
+	background:linear-gradient(#aaaaaa, #888888);
+	border-radius:10px;
+}
+input[type=text] {
+	border-bottom:2px solid #444444;
+	border-top:none;
+	border-right:none;
+	border-left:none;
+	background-color:#999999;
+}
+input[type=text]:focus {
+	outline:#21a4e1;
+>>>>>>> Stashed changes
 }
 .home_body {
 	margin-top:1%;
