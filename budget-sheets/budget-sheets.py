@@ -10,6 +10,7 @@ def index():
         return render_template("home.html")
 
 @app.route("/login/")
+def login():
     if request.method == 'POST':
         session['username'] = request.form['username']
         return redirect(url_for('index'))
