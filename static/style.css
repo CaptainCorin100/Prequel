@@ -68,3 +68,13 @@ input[type=text] {
 input[type=text]:focus {
 	outline:#21a4e1;
 }
+input[type=submit] {
+	transition:box-shadow 0.4s;
+	box-shadow:0px 0px 0px white;
+	background:radial-gradient(circle, #444444, #666666, #444444);
+	border-radius:6px;
+	font-family: 'Didact Gothic', sans-serif;
+}
+input[type=submit]:hover {
+	box-shadow:0px 0px 10px #43eda1;
+}
