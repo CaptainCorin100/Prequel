@@ -9,7 +9,7 @@ def index():
     else:
         return render_template("home.html")
 
-@app.route("/login/"):
+@app.route("/login/")
     if request.method == 'POST':
         session['username'] = request.form['username']
         return redirect(url_for('index'))
