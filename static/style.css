@@ -22,23 +22,13 @@
 	background:linear-gradient(#aaaaaa, #888888);
 	border-radius:10px;
 }
-#stats_form_expense_plus {
+.stats_form_expense_operand {
 	text-align:center;
 	background-color:#dddddd;
 	width:1%;
 }
-#stats_form_expense_plus:hover {
+.stats_form_expense_operand:hover {
 	cursor:pointer;
-}
-input[type=text] {
-	border-bottom:2px solid #444444;
-	border-top:none;
-	border-right:none;
-	border-left:none;
-	background-color:#999999;
-}
-input[type=text]:focus {
-	outline:#21a4e1;
 }
 .home_body {
 	margin-top:1%;
@@ -67,4 +57,14 @@ input[type=text]:focus {
 body {
 	font-family: 'Didact Gothic', sans-serif;
 	background-image:url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTExIVFRUXFRcXFxUXFxcXFxcXFxcXFxUXFxUYHSggGBolHRcXITEiJSkrLi4uFx8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAJcBTQMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAJRABAQEAAAQEBwAAAAAAAAAAAAERAiFhcRJBsfAxUYGRocHR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOprEjQIKkBUFgFISJaBU+o0CYQWASGoSgJaqAoAC6gAmBAVUkUEBQSrE9ACFVkBcFBDFiUFSooCaKAAC6ImguKgC6i6gAFAMReoEi6mqBiUqQFwNAFTACggFIYoIqgJF1FA1MACUKlBaYGgokAVExdAAwFiaAJq1CAQtwalgFKgBSmAGoLIAL3ALGbV0BLFlQBZFIgLCmpYCShVBGpUhQKqALiUQFJQACKCLiFoCatAJBFkBcTfstoAzq1AAi0CFKYBRU0DTAkAkKSgGiADWoAjSACiYCLhSAQpFBKomAaVeSUAtXUAJExdBUVANEgCylCQCAoCUoAUgCpFJASJb1U5AEKQDhilqAqWgAVFkAXCJgBTSwEUANNWpQMWJoBVSACoQAIugJhIWgVL+1IAg1gJwwWpgKzqkBFMXQSUCUBUAIWl+RnYCQ1ZUgLYlNQCqSmgLIYgGKlSAasDQWiSAAQBaixAVKWoCpIVoEUvM0BlU0F1LFMBYmLpgEZ0UEaQAxcEAVJFgILSAJEWgqBARaWgBSe+gCoWkBmRqBQA7gCooEQAVNVkF00gC0IWgiLF0EQUD0WCAM1ooEgEAsAAFQCgsATUq6AvDSmghUMBZCqmAFL3ARcF0DUMABS0EtFZBagAatOFZQTP6pEtAsRfiAJ4TFBUKUBNUAhFlTAKaVYCKRIAFASGmAKYugHQwZ8UAnC0nv8ABYAGoCww0ANwwADFoFCoBakqoCkDhAVAAADUkWwkAwVIAWpV0AgYAbp6GAKi4BOqaGgmlFkAVCgsSlAKe/IXn5AmloAmrQAVABQAEAIgAsiaoBQALUsUAnIACQtADmaABKAEABSoAqACWEUApoAYaAIsADUwAf/Z");
+}
+input[type=text] {
+	border-bottom:2px solid #444444;
+	border-top:none;
+	border-right:none;
+	border-left:none;
+	background-color:#999999;
+}
+input[type=text]:focus {
+	outline:#21a4e1;
 }
