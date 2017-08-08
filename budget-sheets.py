@@ -12,6 +12,7 @@ def index():
     else:
         return render_template("home.html")
 
+#user handling urls
 @app.route("/login/", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -33,8 +34,13 @@ def signup():
         return redirect(url_for("login"))
     return redirect(url_for("index"))
 
+#user planning pages urls.
+@app.route("/user/<username>/budget")
+def budget(username):
+	#TODO lookup budget info for username, then check if user login is allowed to see it.
+	return render_template("statistics.html")
+
 app.secret_key = "b@*_dx$'\xbe\x91v\x1d\xd8M\xaeC\xee\xe4\x90J\x15\xc4%\x16(\x13'"
 
 if (__name__ == "__main__"):
-    if (db != None):
-        app.run(host="0.0.0.0")
+	app.run(host="0.0.0.0")
