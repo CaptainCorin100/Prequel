@@ -17,5 +17,12 @@ def login():
     else:
         return render_template("login.html")
 
+@app.route("/logout/")
+def logout():
+    session.pop("username", None)
+    return redirect(url_for("index"))
+
+app.secret_key = "This key will be better when it is actually secret, and loaded from a database."
+
 if(__name__ == "__main__"):
     app.run(host="0.0.0.0")
