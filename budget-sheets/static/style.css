@@ -1,17 +1,38 @@
 #home_nav {
 	background-color:#666666;
-	height:50%;
-	width:100%;
+	height:10vh;
+	width:99vw;
 	border-radius:10px;
+	padding-top:0%;
+}
+#home_body_left {
+	float:left;
+}
+#home_body_right {
+	float:right;
+}
+.home_body {
+	margin-top:1%;
+	width:45vw;
+	height:60vh;
+	background:#999999;
+	background:linear-gradient(#aaaaaa, #888888);
+	box-shadow:4px 4px 5px #336633;
 }
 .home_nav_button {
 	background-color:#333333;
+	transition:background-color 0.6s;
 	height:100%;
 	width:20%;
 	text-align:center;
+	font-size:200%;
 	border-radius:10px;
+	margin:none;
 	font-family: 'Roboto', sans-serif;
 }
+.home_nav_button:hover {
+	background-color:#00ff00;
+}
 body {
-	background-image:url("https://s-media-cache-ak0.pinimg.com/originals/b5/05/e9/b505e90552d3fb7e7601de546020b635.jpg");
+	background-image:url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTExIVFRUXFRcXFxUXFxcXFxcXFxcXFxUXFxUYHSggGBolHRcXITEiJSkrLi4uFx8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAJcBTQMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAJRABAQEAAAQEBwAAAAAAAAAAAAERAiFhcRJBsfAxUYGRocHR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOprEjQIKkBUFgFISJaBU+o0CYQWASGoSgJaqAoAC6gAmBAVUkUEBQSrE9ACFVkBcFBDFiUFSooCaKAAC6ImguKgC6i6gAFAMReoEi6mqBiUqQFwNAFTACggFIYoIqgJF1FA1MACUKlBaYGgokAVExdAAwFiaAJq1CAQtwalgFKgBSmAGoLIAL3ALGbV0BLFlQBZFIgLCmpYCShVBGpUhQKqALiUQFJQACKCLiFoCatAJBFkBcTfstoAzq1AAi0CFKYBRU0DTAkAkKSgGiADWoAjSACiYCLhSAQpFBKomAaVeSUAtXUAJExdBUVANEgCylCQCAoCUoAUgCpFJASJb1U5AEKQDhilqAqWgAVFkAXCJgBTSwEUANNWpQMWJoBVSACoQAIugJhIWgVL+1IAg1gJwwWpgKzqkBFMXQSUCUBUAIWl+RnYCQ1ZUgLYlNQCqSmgLIYgGKlSAasDQWiSAAQBaixAVKWoCpIVoEUvM0BlU0F1LFMBYmLpgEZ0UEaQAxcEAVJFgILSAJEWgqBARaWgBSe+gCoWkBmRqBQA7gCooEQAVNVkF00gC0IWgiLF0EQUD0WCAM1ooEgEAsAAFQCgsATUq6AvDSmghUMBZCqmAFL3ARcF0DUMABS0EtFZBagAatOFZQTP6pEtAsRfiAJ4TFBUKUBNUAhFlTAKaVYCKRIAFASGmAKYugHQwZ8UAnC0nv8ABYAGoCww0ANwwADFoFCoBakqoCkDhAVAAADUkWwkAwVIAWpV0AgYAbp6GAKi4BOqaGgmlFkAVCgsSlAKe/IXn5AmloAmrQAVABQAEAIgAsiaoBQALUsUAnIACQtADmaABKAEABSoAqACWEUApoAYaAIsADUwAf/Z");
 }
