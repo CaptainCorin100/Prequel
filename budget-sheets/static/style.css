@@ -1,6 +1,6 @@
 #home_nav {
-	background:#666666;
-	background:linear-gradient(#777777, #555555);
+	background:#299277;
+	background:linear-gradient(#af546b, #555555);
 	height:10vh;
 	width:99vw;
 	border-radius:10px;
@@ -36,12 +36,12 @@ input[type=text]:focus {
 	margin-top:1%;
 	width:45vw;
 	height:60vh;
-	background:#999999;
-	background:linear-gradient(#aaaaaa, #888888);
+	background:#F88995;
+	background:linear-gradient(#3992a0, #eeeeee);
 	box-shadow:4px 4px 5px #99aa99;
 }
 .home_nav_button {
-	background-color:#33333333;
+	background-color:#3992a0;
 	transition:background-color 0.6s;
 	height:100%;
 	width:8%;
