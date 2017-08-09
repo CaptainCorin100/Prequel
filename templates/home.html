@@ -11,7 +11,7 @@
 			<a href="home.html" id="nav_button_home"><div class="nav_button"><p>Home</p></div></a>
 			<a href="statistics.html" id="nav_button_update"><div class="nav_button"><p>Input</p></div></a>
 			<a href="comparisons.html" id="nav_button_compare"><div class="nav_button"><p>Compare</p></div></a>
-			<div class="login_status" id="login_status">{{login_status|safe}}</div>
+			<div class="nav_button" id="login_status">{{login_status|safe}}</div>
 		</div>
 
 
@@ -30,10 +30,10 @@
 					<input type="email" id="home_signup_email", name="email">
 					<br>
 					<label for="home_signup_password">Password:</label>
-					<input type="text" id="home_signup_password", name="password">
+					<input type="password" id="home_signup_password", name="password">
 					<br>
 					<label for="home_signup_reppassword">Repeat Password:</label>
-					<input type="text" id="home_signup_reppassword">
+					<input type="password" id="home_signup_reppassword">
 					<br>
 					<input type="submit">
 				</fieldset>

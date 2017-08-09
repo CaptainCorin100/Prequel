@@ -15,6 +15,10 @@
 	width: 100px;
 	height:110%
 }
+#login_status {
+	float:right;
+	background-color:#12ef43;
+}
 #home_body_left {
 	float:left;
 }
@@ -95,6 +99,20 @@ input[type=text] {
 	background-color:#999999;
 }
 input[type=text]:focus {
+	outline:none;
+	background-color:#ffffff;
+	box-shadow:0px 0px 8px #43eda1;
+}
+input[type=password] {
+	transition:box-shadow 0.4s;
+	box-shadow:0px 0px 0px white;
+	border-bottom:2px solid #444444;
+	border-top:none;
+	border-right:none;
+	border-left:none;
+	background-color:#999999;
+}
+input[type=password]:focus {
 	outline:none;
 	background-color:#ffffff;
 	box-shadow:0px 0px 8px #43eda1;
