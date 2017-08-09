@@ -42,6 +42,16 @@
 	background:#999999;
 	background:linear-gradient(#aaaaaa, #888888);
 }
+#login_box {
+	background:linear-gradient(to bottom right,rgba(50,50,50,0.2),rgba(200,200,200,0.2));
+	width:20vw;
+	height:50vh;
+	transform:translate(0,20vh);
+	text-align:center;
+	margin:auto;
+	border-radius:10px;
+	border:2px solid black;
+}
 .stats_form_expense_operand {
 	text-align:center;
 	background-color:#dddddd;

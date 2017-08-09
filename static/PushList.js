@@ -14,12 +14,15 @@ function push () {
 						'<label>Cost:</label>\n'+
 						'<input type="number" name="cost" id="stats_form_netpay">';
 		div.id = "stats_form_expense_row" + ((document.getElementById("stats_form_expense").children.length-1).toString());
-		console.log (div);
 		div.children[1].id = "stats_form_expense_type" + ((document.getElementById("stats_form_expense").children.length-1).toString());
 		div.children[3].id = "stats_form_expense_name" + ((document.getElementById("stats_form_expense").children.length-1).toString());
 		div.children[5].id = "stats_form_expense_cost" + ((document.getElementById("stats_form_expense").children.length-1).toString());
+
+		div.name = "stats_form_expense_row" + ((document.getElementById("stats_form_expense").children.length-1).toString());
+		div.children[1].name = "stats_form_expense_type" + ((document.getElementById("stats_form_expense").children.length-1).toString());
+		div.children[3].name = "stats_form_expense_name" + ((document.getElementById("stats_form_expense").children.length-1).toString());
+		div.children[5].name = "stats_form_expense_cost" + ((document.getElementById("stats_form_expense").children.length-1).toString());
 		document.getElementById("stats_form_expense").appendChild (div);
-		console.log (div.children[1].id);
 	}
 }
 function remove () {
