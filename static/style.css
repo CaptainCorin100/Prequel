@@ -1,5 +1,5 @@
 #nav {
-	background:linear-gradient(#3992a0, #333333);
+	background:linear-gradient(to bottom right,#1571a2, #333333);
 	height:10vh;
 	width:99vw;
 	border-radius:10px;
@@ -65,7 +65,7 @@
 	width:45vw;
 	height:60vh;
 	background:#F88995;
-	background:linear-gradient(#3992a0, #eeeeee);
+	background:linear-gradient(#3992a0, #777777);
 	box-shadow:4px 4px 5px #99aa99;
 	font-size:200%;
 }
@@ -79,12 +79,16 @@
 	font-size:200%;
 }
 .nav_button {
+	text-align:center;
+	top: 50%;
+	transform: translateY(6.25%);
+	border-left:5px solid #666666;
 	background-color:#A992AD;
 	transition:background-color 0.6s;
-	height:100%;
+	height:80%;
 	width:8%;
 	text-align:center;
-	font-size:auto;
+	font-size:150%;
 	border-radius:10px;
 	margin:none;
 	font-family: 'Didact Gothic', sans-serif;
@@ -154,5 +158,4 @@ input[type=submit]:hover {
 }
 p {
 	margin:0px;
-	text-align: justify;
 }

@@ -7,7 +7,6 @@ window.onload = function () {
 }
 
 function validateName () {
-	console.log (document.getElementById ("home_form").children[2].value.length);
 	if (document.getElementById ("home_form").children[2].value.length < 6) {
 		document.getElementById ("home_form").children[2].setCustomValidity ("Name is too short");
 	} else {
@@ -15,12 +14,16 @@ function validateName () {
 	}
 } 
 function validatePassword () {
-	if (document.getElementById ("home_form").children[8].value != document.getElementById ("home_form").children[11].value) {
+	console.log (document.getElementById ("home_form").children[11].value);
+	console.log (document.getElementById ("home_form").children[8].value);
+	if (document.getElementById ("home_form").children[8].value == document.getElementById ("home_form").children[11].value) {
 		document.getElementById ("home_form").children[11].setCustomValidity ("Passwords do not match");
 	} else {
 		var re = /^.{6,}$/;
 		if(!re.test(document.getElementById ("home_form").children[8])) {
 			document.getElementById ("home_form").children[8].setCustomValidity ("Password is unapplicable");
+		} else {
+			document.getElementById ("home_form").children[8].setCustomValidity ("");
 		}
 	}
 }
