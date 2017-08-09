@@ -1,4 +1,4 @@
-from flask import Flask, session, render_template, request, redirect, escape
+from flask import Flask, session, render_template, request, redirect, url_for, escape
 import pymysql.cursors
 import bcrypt
 
