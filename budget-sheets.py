@@ -1,10 +1,16 @@
 from flask import Flask, session, render_template, request, redirect, url_for, escape
 import pymysql.cursors
 import bcrypt
+import re
 
 app = Flask(__name__)
 db = pymysql.connect(host="localhost", user="budget-sheets", passwd="sheets-budget", db="budget-sheets", cursorclass=pymysql.cursors.DictCursor)
 cursor = db.cursor()
+
+def cleanhtml(raw_html): #Clean html function using regex. Found on stack overflow. https://stackoverflow.com/questions/9662346/python-code-to-remove-html-tags-from-a-string#12982689
+  cleanr = re.compile('<.*?>')
+  cleantext = re.sub(cleanr, '', raw_html)
+  return cleantext
 
 #database interface abstraction functions
 def check_login(username, password):
@@ -20,8 +26,9 @@ def check_login(username, password):
 def create_user_account(username, email, password):
     password_hash = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
     sql = 'INSERT INTO `users` (`username`, `email`, `password`) VALUES ("{}", "{}", "{}")'
-    print(sql.format(username, email, password_hash.decode("utf-8")))
-    cursor.execute(sql.format(username, email, password_hash.decode("utf-8")))
+    #Use line below to print sql code when debugging
+    #print(sql.format(username, email, password_hash.decode("utf-8")))
+    cursor.execute(sql.format(cleanhtml(username), email, password_hash.decode("utf-8")))
     db.commit()
     return True
 
