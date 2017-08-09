@@ -17,7 +17,7 @@ def check_login(username, password):
         return False
 
 def create_user_account(username, email, password):
-    password_hash = bcrypt.hashpw(password, bcrypt.gensalt())
+    password_hash = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
     sql = "INSERT INTO `users` (`username`, `email`, `password`) VALUES (%s, %s, %s)"
     cursor.execute(sql, username, email, password_hash)
     db.commit()
