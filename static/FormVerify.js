@@ -1,4 +1,5 @@
 var form = document.getElementById ("home_form");
+console.log (form);
 var name = form.children[2];
 //var mail = form.children[5];
 var pass = form.children[8];
@@ -20,6 +21,9 @@ function validatePassword () {
 	if (pass.value != pass2.value) {
 		pass2.setCustomValidity ("Passwords do not match");
 	} else {
-		
+		var re = /^.{6,}$/;
+		if(!re.test(pass)) {
+			pass.setCustomValidity ("Password is unapplicable");
+		}
 	}
 }
