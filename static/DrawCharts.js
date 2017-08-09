@@ -2,5 +2,6 @@ google.charts.load('current', {packages: ['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart () {
-	//var data = new google.visualisation
+	var data = new google.visualisation.DataTable();
+	//data.addColumn
 }
