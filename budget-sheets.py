@@ -1,19 +1,29 @@
-from flask import Flask, session, render_template, request, redirect, escape
+from flask import Flask, session, render_template, request, redirect, url_for, escape
 import pymysql.cursors
+import bcrypt
 
 app = Flask(__name__)
 db = pymysql.connect(host="localhost", user="budget-sheets", passwd="sheets-budget", db="budget-sheets", cursorclass=pymysql.cursors.DictCursor)
 cursor = db.cursor()
 
 #database interface abstraction functions
-def check_login(username, password_hash):
-    sql = "SELECT `password` FROM `users` WHERE `username`=" + username
-    cursor.execute(sql)
+def check_login(username, password):
+    sql = "SELECT `password` FROM `users` WHERE `username`={}"
+    cursor.execute(sql.format(username))
     result = cursor.fetchone()
-    if(result.get("username") == username):
+    if(bcypt.checkpw(password, result.get("password"))):
         return True
     else:
         return False
+
+def create_user_account(username, email, password):
+    password_hash = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+    sql = 'INSERT INTO `users` (`username`, `email`, `password`) VALUES ("{}", "{}", "{}")'
+    print(sql.format(username, email, password_hash.decode("utf-8")))
+    cursor.execute(sql.format(username, email, password_hash))
+    db.commit()
+    return True
+
 
 #flask application urls and functions
 @app.route("/")
@@ -44,7 +54,13 @@ def logout():
 @app.route("/signup/", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
-        return redirect(url_for("login"))
+        username = request.form["username"]
+        email = request.form["email"]
+        password = request.form["password"]
+        if (create_user_account(username, email, password)):
+            return redirect(url_for("login"))
+        else:
+            return redirect(url_for("index"))
     return redirect(url_for("index"))
 
 #user planning pages urls.

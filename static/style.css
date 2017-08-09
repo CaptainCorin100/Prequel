@@ -11,6 +11,10 @@
 #nav_button_stats {
 	overflow:hidden;
 }
+#nav_button_compare {
+	width: 100px;
+	height:110%
+}
 #home_body_left {
 	float:left;
 }
@@ -66,7 +70,7 @@
 	height:100%;
 	width:8%;
 	text-align:center;
-	font-size:200%;
+	font-size:auto;
 	border-radius:10px;
 	margin:none;
 	font-family: 'Didact Gothic', sans-serif;
@@ -121,5 +125,5 @@ input[type=submit]:hover {
 }
 p {
 	margin:0px;
-	word-wrap:break-word;
+	text-align: justify;
 }
