@@ -5,6 +5,17 @@ app = Flask(__name__)
 db = pymysql.connect(host="localhost", user="budget-sheets", passwd="sheets-budget", db="budget-sheets", cursorclass=pymysql.cursors.DictCursor)
 cursor = db.cursor()
 
+#database interface abstraction functions
+def check_login(username, password_hash):
+    sql = "SELECT `password` FROM `users` WHERE `username`=" + username
+    cursor.execute(sql)
+    result = cursor.fetchone()
+    if(result.get("username") == username):
+        return True
+    else:
+        return False
+
+#flask application urls and functions
 @app.route("/")
 def index():
     if "username" in session:
@@ -16,9 +27,11 @@ def index():
 @app.route("/login/", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        app.logger.info("User " + request.form['username'] + " requested login")
-
-        session['username'] = request.form['username']
+        username = request.form["username"]
+        password = request.form["password"]
+        app.logger.info("User " + username + " requested login.")
+        if (check_login(username, password)):
+            session['username'] = request.form['username']
         return redirect(url_for('index'))
     else:
         return render_template("login.html")
