@@ -17,6 +17,12 @@
 #home_body_right {
 	float:right;
 }
+#compare_panel_left {
+	float:left;
+}
+#compare_panel_right {
+	float:right;
+}
 #nav_break {
 	width:1px;
 	height:100%;
@@ -37,6 +43,15 @@
 	cursor:pointer;
 }
 .home_body {
+	margin-top:1%;
+	width:45vw;
+	height:60vh;
+	background:#F88995;
+	background:linear-gradient(#3992a0, #eeeeee);
+	box-shadow:4px 4px 5px #99aa99;
+	font-size:200%;
+}
+.compare_panel {
 	margin-top:1%;
 	width:45vw;
 	height:60vh;
