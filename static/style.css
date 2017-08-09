@@ -67,6 +67,8 @@ body {
 	background-image:url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTExIVFRUXFRcXFxUXFxcXFxcXFxcXFxUXFxUYHSggGBolHRcXITEiJSkrLi4uFx8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAJcBTQMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAJRABAQEAAAQEBwAAAAAAAAAAAAERAiFhcRJBsfAxUYGRocHR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOprEjQIKkBUFgFISJaBU+o0CYQWASGoSgJaqAoAC6gAmBAVUkUEBQSrE9ACFVkBcFBDFiUFSooCaKAAC6ImguKgC6i6gAFAMReoEi6mqBiUqQFwNAFTACggFIYoIqgJF1FA1MACUKlBaYGgokAVExdAAwFiaAJq1CAQtwalgFKgBSmAGoLIAL3ALGbV0BLFlQBZFIgLCmpYCShVBGpUhQKqALiUQFJQACKCLiFoCatAJBFkBcTfstoAzq1AAi0CFKYBRU0DTAkAkKSgGiADWoAjSACiYCLhSAQpFBKomAaVeSUAtXUAJExdBUVANEgCylCQCAoCUoAUgCpFJASJb1U5AEKQDhilqAqWgAVFkAXCJgBTSwEUANNWpQMWJoBVSACoQAIugJhIWgVL+1IAg1gJwwWpgKzqkBFMXQSUCUBUAIWl+RnYCQ1ZUgLYlNQCqSmgLIYgGKlSAasDQWiSAAQBaixAVKWoCpIVoEUvM0BlU0F1LFMBYmLpgEZ0UEaQAxcEAVJFgILSAJEWgqBARaWgBSe+gCoWkBmRqBQA7gCooEQAVNVkF00gC0IWgiLF0EQUD0WCAM1ooEgEAsAAFQCgsATUq6AvDSmghUMBZCqmAFL3ARcF0DUMABS0EtFZBagAatOFZQTP6pEtAsRfiAJ4TFBUKUBNUAhFlTAKaVYCKRIAFASGmAKYugHQwZ8UAnC0nv8ABYAGoCww0ANwwADFoFCoBakqoCkDhAVAAADUkWwkAwVIAWpV0AgYAbp6GAKi4BOqaGgmlFkAVCgsSlAKe/IXn5AmloAmrQAVABQAEAIgAsiaoBQALUsUAnIACQtADmaABKAEABSoAqACWEUApoAYaAIsADUwAf/Z");
 }
 input[type=text] {
+	transition:box-shadow 0.4s;
+	box-shadow:0px 0px 0px white;
 	border-bottom:2px solid #444444;
 	border-top:none;
 	border-right:none;
@@ -74,7 +76,23 @@ input[type=text] {
 	background-color:#999999;
 }
 input[type=text]:focus {
-	outline:#21a4e1;
+	outline:none;
+	background-color:#ffffff;
+	box-shadow:0px 0px 8px #43eda1;
+}
+input[type=email] {
+	transition:box-shadow 0.4s;
+	box-shadow:0px 0px 0px white;
+	border-bottom:2px solid #444444;
+	border-top:none;
+	border-right:none;
+	border-left:none;
+	background-color:#999999;
+}
+input[type=email]:focus {
+	outline:none;
+	background-color:#ffffff;
+	box-shadow:0px 0px 8px #43eda1;
 }
 input[type=submit] {
 	transition:box-shadow 0.4s;
