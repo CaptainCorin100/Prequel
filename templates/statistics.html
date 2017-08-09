@@ -25,14 +25,17 @@
 				<fieldset id="stats_form_expense">
 					<legend>Expenditures</legend>
 					<div id="stats_form_expense_row0">
-						<label>Purchase Type:</label>
+						<label>Expense Category:</label>
 						<select>
 							<option value="food">Food</option>
 							<option value="appliances">Appliances</option>
 							<option value="luxuries">Luxuries</option>
+							<option value="other">Other</option>
 						</select>
-						<label>Purchase Amount:</label>
-						<input type="text" name="Amount:" id="stats_form_netpay">
+						<label>Expense Name:</label>
+						<input type="text" name="name" id="stats_form_netpay">
+						<label>Cost:</label>
+						<input type="text" name="cost" id="stats_form_netpay">
 					</div>
 				</fieldset>
 				<div class="stats_form_expense_operand" OnClick="push()"><p>+</p></div>
