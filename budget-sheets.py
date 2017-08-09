@@ -32,7 +32,7 @@ def index():
     if "username" in session:
         return render_template("home.html", login_status=render_template("logged_in", user=escape(session['username'])))
     else:
-        return render_template("home.html", login_status=render_template("not_logged_in")
+        return render_template("home.html", login_status=render_template("not_logged_in"))
 
 #user handling urls
 @app.route("/login/", methods=["GET", "POST"])
