@@ -30,9 +30,9 @@ def create_user_account(username, email, password):
 @app.route("/")
 def index():
     if "username" in session:
-        return render_template("home.html", login_status=render_template("logged_in", user=escape(session['username'])))
+        return render_template("home.html", login_status="<p>Logged in as user " + escape(session['username']) + "</p>")
     else:
-        return render_template("home.html", login_status=render_template("not_logged_in"))
+        return render_template("home.html", login_status='<a href="/login/">Log in</a>')
 
 #user handling urls
 @app.route("/login/", methods=["GET", "POST"])
