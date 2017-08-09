@@ -8,10 +8,11 @@ cursor = db.cursor()
 
 #database interface abstraction functions
 def check_login(username, password):
-    sql = "SELECT `password` FROM `users` WHERE `username`={}"
+    sql = 'SELECT `password` FROM `users` WHERE `username`="{}"'
+    print(sql.format(username))
     cursor.execute(sql.format(username))
     result = cursor.fetchone()
-    if(bcypt.checkpw(password, result.get("password"))):
+    if(bcrypt.checkpw(password.encode("utf-8"), result.get("password").encode("utf-8")):
         return True
     else:
         return False
