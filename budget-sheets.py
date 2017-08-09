@@ -21,7 +21,7 @@ def create_user_account(username, email, password):
     password_hash = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
     sql = 'INSERT INTO `users` (`username`, `email`, `password`) VALUES ("{}", "{}", "{}")'
     print(sql.format(username, email, password_hash.decode("utf-8")))
-    cursor.execute(sql.format(username, email, password_hash))
+    cursor.execute(sql.format(username, email, password_hash.decode("utf-8")))
     db.commit()
     return True
 
