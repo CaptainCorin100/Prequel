@@ -42,7 +42,11 @@ def login():
         app.logger.info("User " + username + " requested login.")
         if (check_login(username, password)):
             session['username'] = request.form['username']
-        return redirect(url_for('index'))
+            app.logger.info("User " + username + " logged in.")
+            return redirect(url_for('index'))
+        else:
+            app.logger.info("User " + username + " failed login.")
+            return render_template("login.html")
     else:
         return render_template("login.html")
 
