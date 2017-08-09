@@ -7,7 +7,7 @@ app = Flask(__name__)
 db = pymysql.connect(host="localhost", user="budget-sheets", passwd="sheets-budget", db="budget-sheets", cursorclass=pymysql.cursors.DictCursor)
 cursor = db.cursor()
 
-def cleanhtml(raw_html): #Clean html function using regex. Found on stack overflow. https://stackoverflow.com/questions/9662346/python-code-to-remove-html-tags-from-a-string#12982689
+def cleanhtml(raw_html): #Clean html function using regex. Found on stack overflow. Source: https://stackoverflow.com/questions/9662346/python-code-to-remove-html-tags-from-a-string#12982689
   cleanr = re.compile('<.*?>')
   cleantext = re.sub(cleanr, '', raw_html)
   return cleantext
@@ -76,9 +76,8 @@ def signup():
     return redirect(url_for("index"))
 
 #user planning pages urls.
-@app.route("/user/<username>/budget")
-def budget(username):
-	#TODO lookup budget info for username, then check if user login is allowed to see it.
+@app.route("/budget/setup/")
+def budget_setup():
 	return render_template("statistics.html")
 
 app.secret_key = "b@*_dx$'\xbe\x91v\x1d\xd8M\xaeC\xee\xe4\x90J\x15\xc4%\x16(\x13'"
