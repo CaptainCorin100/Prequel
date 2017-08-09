@@ -90,6 +90,7 @@
 	font-family: 'Didact Gothic', sans-serif;
 	display:inline-block;
 	vertical-align:top;
+	text-align:center;
 }
 .nav_button:hover {
 	background-color:#00a7d1;

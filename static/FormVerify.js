@@ -1,31 +1,26 @@
-window.onLoad = function () {
-	var form = document.getElementById ("home_body_left");
-	console.log (form);
-	var name = form.children[2];
-	//var mail = form.children[5];
-	var pass = form.children[8];
-	var pass2 = form.children[11];
-
-	name.onchange = validateName ();
-	//mail.onchange = validateMail ();
-	pass.onchange = validatePassword ();
-	pass2.onchange = validatePassword ();
+window.onload = function () {
+	var form = document.getElementById ("home_form");
+	console.log (form.children[2]);
+	form.children[2].oninput = validateName;
+	form.children[8].oninput = validatePassword;
+	form.children[11].oninput = validatePassword;
 }
 
 function validateName () {
-	if (name.value.length < 6) {
-		name.setCustomValidity ("Name is too short");
+	console.log (document.getElementById ("home_form").children[2].value.length);
+	if (document.getElementById ("home_form").children[2].value.length < 6) {
+		document.getElementById ("home_form").children[2].setCustomValidity ("Name is too short");
 	} else {
-		name.setCustomValidity ("");
+		document.getElementById ("home_form").children[2].setCustomValidity ("");
 	}
 } 
 function validatePassword () {
-	if (pass.value != pass2.value) {
-		pass2.setCustomValidity ("Passwords do not match");
+	if (document.getElementById ("home_form").children[8].value != document.getElementById ("home_form").children[11].value) {
+		document.getElementById ("home_form").children[11].setCustomValidity ("Passwords do not match");
 	} else {
 		var re = /^.{6,}$/;
-		if(!re.test(pass)) {
-			pass.setCustomValidity ("Password is unapplicable");
+		if(!re.test(document.getElementById ("home_form").children[8])) {
+			document.getElementById ("home_form").children[8].setCustomValidity ("Password is unapplicable");
 		}
 	}
 }
