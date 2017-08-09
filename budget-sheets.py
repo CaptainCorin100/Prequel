@@ -8,8 +8,8 @@ cursor = db.cursor()
 
 #database interface abstraction functions
 def check_login(username, password):
-    sql = "SELECT `password` FROM `users` WHERE `username`=%s"
-    cursor.execute(sql, username)
+    sql = "SELECT `password` FROM `users` WHERE `username`={}"
+    cursor.execute(sql.format(username))
     result = cursor.fetchone()
     if(bcypt.checkpw(password, result.get("password"))):
         return True
@@ -18,8 +18,8 @@ def check_login(username, password):
 
 def create_user_account(username, email, password):
     password_hash = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
-    sql = "INSERT INTO `users` (`username`, `email`, `password`) VALUES (%s, %s, %s)"
-    cursor.execute(sql, username, email, password_hash)
+    sql = "INSERT INTO `users` (`username`, `email`, `password`) VALUES ({}, {}, {})"
+    cursor.execute(sql.format(username, email, password_hash))
     db.commit()
     return True
 
