@@ -76,9 +76,16 @@ def signup():
     return redirect(url_for("index"))
 
 #user planning pages urls.
-@app.route("/budget/setup/")
+@app.route("/budget/setup/", methods=["GET", "POST"])
 def budget_setup():
-	return render_template("statistics.html")
+    TypeRE = re.compile()
+    NameRE = re.compile()
+    CostRe = re.compile()
+    if request.method == "POST":
+        for form in request.form:
+
+    else:
+        return render_template("statistics.html")
 
 app.secret_key = "b@*_dx$'\xbe\x91v\x1d\xd8M\xaeC\xee\xe4\x90J\x15\xc4%\x16(\x13'"
 
