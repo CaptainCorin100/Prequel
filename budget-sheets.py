@@ -12,7 +12,7 @@ def check_login(username, password):
     print(sql.format(username))
     cursor.execute(sql.format(username))
     result = cursor.fetchone()
-    if(bcypt.checkpw(password, result.get("password"))):
+    if(bcrypt.checkpw(password, result.get("password"))):
         return True
     else:
         return False
