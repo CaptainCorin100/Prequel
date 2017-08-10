@@ -78,12 +78,12 @@ def signup():
 #user planning pages urls.
 @app.route("/budget/setup/", methods=["GET", "POST"])
 def budget_setup():
-    TypeRE = re.compile()
-    NameRE = re.compile()
-    CostRe = re.compile()
     if request.method == "POST":
-        for form in request.form:
-
+        types = request.form.getlist("type")
+        names = request.form.getlist("name")
+        costs = request.form.getlist("cost")
+        #print out all of the type values to check this works.
+        print(types)
     else:
         return render_template("statistics.html")
 
