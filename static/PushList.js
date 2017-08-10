@@ -19,11 +19,11 @@ function push () {
 		div.children[5].id = "stats_form_expense_cost" + ((document.getElementById("stats_form_expense").children.length-1).toString());
 
 		div.name = "stats_form_expense_row" + ((document.getElementById("stats_form_expense").children.length-1).toString());
-		div.children[1].name = "type" + ((document.getElementById("stats_form_expense").children.length-1).toString());
-		div.children[3].name = "name" + ((document.getElementById("stats_form_expense").children.length-1).toString());
-		div.children[5].name = "cost" + ((document.getElementById("stats_form_expense").children.length-1).toString());
+		div.children[1].name = "type";	
+		div.children[3].name = "name";	
+		div.children[5].name = "cost";
 		document.getElementById("stats_form_expense").appendChild (div);
-	}
+		}
 }
 function remove () {
 	if (document.getElementById("stats_form_expense").children.length > 1) {
