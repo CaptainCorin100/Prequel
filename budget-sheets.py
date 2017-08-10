@@ -20,6 +20,7 @@ class Expense:
         self.cost = cost
 
 #database interface abstraction functions
+#database interfaces for creating and checking user logins
 def check_login(username, password):
     sql = 'SELECT `password` FROM `users` WHERE `username`="{}"'
     print(sql.format(username))
@@ -39,6 +40,7 @@ def create_user_account(username, email, password):
     db.commit()
     return True
 
+#database functions for adding costs, net incomes and for retreiving incomes and expenses
 def add_cost(username, val_type, name, cost):
     sql = 'INSERT INTO `budget-values` (`username`, `type`, `name`, `cost`) VALUES ("{}", "{}", "{}", "{}")'
     cursor.execute(sql.format(username, val_type, name, cost))
@@ -51,6 +53,16 @@ def add_net_income(username, income):
     db.commit()
     return True
 
+def get_expenses(username):
+    sql = 'SELECT * FROM `budget-values` WHERE `username`="{}"'
+    cursor.execute(sql.format(username))
+    results = cursor.fetchall()
+    expenses = []
+    for result in results:
+        expenses.append(Expense(result.get("type"), result.get("name") result.get("cost")))
+    return expenses
+
+#database functions for user viewing permissions
 def add_allowed_user(username, allowed_username):
     sql = 'INSERT INTO `allowed-users` (`username`, `allowed_username`) VALUES ("{}", "{}")'
     cursor.execute(sql.format(username, allowed_username))
@@ -134,10 +146,11 @@ def budget_setup():
 @app.route("/budget/compare/setup/", methods=["GET", "POST"])
 def budget_compare_setup():
     if ("username" in session):
+        user_expenses = get_expenses(session["username"])
         if request.method == "POST":
             requested_username = request.form["username"]
             add_allowed_user(session["username"], requested_username)
-        return render_template("comparisons-setup.html", login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
+        return render_template("comparisons-setup.html", expenses_1=user_expenses, login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
     else:
         return redirect(url_for("index"))
 
@@ -148,9 +161,11 @@ def budget_compare_user():
             username = session["username"]
             requested_username = request.form["username"]
             if (check_user_allowed(username, requested_username)):
-                return render_template("comparisons.html", login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
+                user_expenses = get_expenses(username)
+                req_expenses = get_expenses(requested_username)
+                return render_template("comparisons.html", expenses_1=user_expenses, expenses_2=req_expenses, login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
             else:
-                return render_template("")
+                return redirect(url_for("budget_compare_setup"))
         else:
             return redirect(url_for("budget_compare_setup"))
     else:
