@@ -64,7 +64,7 @@ def get_expenses(username):
 
 #database functions for user viewing permissions
 def add_allowed_user(username, allowed_username):
-    sql = 'INSERT INTO `allowed-users` (`username`, `allowed_username`) VALUES ("{}", "{}")'
+    sql = 'INSERT INTO `allowed-users` (`username`, `allowed-username`) VALUES ("{}", "{}")'
     cursor.execute(sql.format(username, allowed_username))
     db.commit()
     return True
