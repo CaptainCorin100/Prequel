@@ -89,8 +89,11 @@ def budget_setup():
             types = request.form.getlist("type")
             names = request.form.getlist("name")
             costs = request.form.getlist("cost")
+            output = "Types: {}, Names: {}, Costs: {}"
+            print(output.format(types, names, costs))
             for i in range (0, len(types)-1):
                 add_cost(username, types[i], names[i], costs[i])
+            return redirect(url_for("index"))
         else:
             return render_template("statistics.html")
     else:
