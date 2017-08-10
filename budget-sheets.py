@@ -58,7 +58,7 @@ def add_allowed_user(username, allowed_username):
 @app.route("/")
 def index():
     if "username" in session:
-        return render_template("home.html", login_status="<p>Logged in as user " + session['username'] + '</p> <br> <a href="/logout/">Logout</a>')
+        return render_template("home.html", login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
     else:
         return render_template("home.html", login_status='<a href="/login/">Log in</a>')
 
@@ -113,7 +113,7 @@ def budget_setup():
                 add_cost(username, types[i], names[i], costs[i])
             return redirect(url_for("index"))
         else:
-            return render_template("statistics.html", login_status="<p>Logged in as user " + session['username'] + '</p> <br> <a href="/logout/">Logout</a>')
+            return render_template("statistics.html", login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
     else:
         return redirect(url_for("login"))
 
@@ -121,8 +121,9 @@ def budget_setup():
 def budget_compare_setup():
     if ("username" in session):
         if request.method == "POST":
-            print("TOTO add username to allowed here.")
-        return render_template("comparisons-setup.html", login_status="<p>Logged in as user " + session['username'] + '</p> <br> <a href="/logout/">Logout</a>')
+            requested_username = request.form["username"]
+            add_allowed_user(session["username"], requested_username)
+        return render_template("comparisons-setup.html", login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
     else:
         return redirect(url_for("index"))
 
