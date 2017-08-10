@@ -40,7 +40,7 @@ def create_user_account(username, email, password):
     db.commit()
     return True
 
-#database functions for adding costs, net incomes and for retreiving incomes and expenses
+#database functions for adding costs and net incomes to the correct tables
 def add_cost(username, val_type, name, cost):
     sql = 'INSERT INTO `budget-values` (`username`, `type`, `name`, `cost`) VALUES ("{}", "{}", "{}", "{}")'
     cursor.execute(sql.format(username, val_type, name, cost))
@@ -53,6 +53,7 @@ def add_net_income(username, income):
     db.commit()
     return True
 
+#retreive all expenses for a username. Ouputs list of Expense objects. Class for objects defined above.
 def get_expenses(username):
     sql = 'SELECT * FROM `budget-values` WHERE `username`="{}"'
     cursor.execute(sql.format(username))
@@ -62,6 +63,9 @@ def get_expenses(username):
         expenses.append(Expense(result.get("type"), result.get("name"), result.get("cost")))
     return expenses
 
+#function definition and comment not applicable to current master branch. placeholder for creating a dev branch to test features.
+#remove all expenses for a user. Use for updating user expenses instead of 
+
 #database functions for user viewing permissions
 def add_allowed_user(username, allowed_username):
     sql = 'INSERT INTO `allowed-users` (`username`, `allowed-username`) VALUES ("{}", "{}")'
@@ -69,7 +73,7 @@ def add_allowed_user(username, allowed_username):
     db.commit()
     return True
 
-def check_user_allowed(username, target_username):
+def check_user_allowed(username, target_username): #get all users that the username is allowed to access the pages of. Then check that the target username they want to see is on that list.
     sql = sql = 'SELECT * FROM `allowed-users` WHERE `allowed-username`="{}"'
     cursor.execute(sql.format(target_username))
     result = cursor.fetchone()
