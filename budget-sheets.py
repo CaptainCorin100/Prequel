@@ -73,10 +73,11 @@ def check_user_allowed(username, target_username):
     sql = sql = 'SELECT * FROM `allowed-users` WHERE `allowed-username`="{}"'
     cursor.execute(sql.format(target_username))
     result = cursor.fetchone()
-    print(result.get("username"))
-    print(username)
-    if(result.get("username") == username):
-        return True
+    if (result != None):
+        print(result.get("username"))
+        print(username)
+        if(result.get("username") == username):
+            return True
     else:
         return False
 
@@ -149,6 +150,7 @@ def budget_compare_setup():
         user_expenses = get_expenses(session["username"])
         if request.method == "POST":
             requested_username = request.form["username"]
+            print(requested_username)
             add_allowed_user(session["username"], requested_username)
         return render_template("comparisons-setup.html", expenses_1=user_expenses, login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
     else:
