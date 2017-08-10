@@ -51,6 +51,7 @@
 
 #login_status {
 	float:right;
+	width:20%;
 	transition:background-color 0.6s;
 	background-color:#12ef43;
 }
