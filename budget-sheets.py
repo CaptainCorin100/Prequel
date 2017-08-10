@@ -52,7 +52,21 @@ def add_net_income(username, income):
     return True
 
 def add_allowed_user(username, allowed_username):
+    sql = 'INSERT INTO `allowed-users` (`username`, `allowed_username`) VALUES ("{}", "{}")'
+    cursor.execute(sql.format(username, allowed_username))
+    db.commit()
     return True
+
+def check_user_allowed(username, target_username):
+    sql = sql = 'SELECT `username` FROM `users` WHERE `target_username`="{}"'
+    cursor.execute(sql.format(target_username))
+    result = cursor.fetchone()
+    print(result.get("username"))
+    print(username)
+    if(result.get("username") == username):
+        return True
+    else:
+        return False
 
 #flask application urls and functions
 @app.route("/")
