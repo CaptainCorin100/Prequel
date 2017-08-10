@@ -3,7 +3,7 @@
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="/static/style.css">
+		<link rel="stylesheet" type="text/css" href="static/style.css">
 		<script language="Javascript" type="text/javascript" src="/static/FormVerify.js"></script>
 		<title>Budget Sheets</title>
 	</head>
@@ -21,9 +21,9 @@
 	    </div>
 
 		<div id="home_body_left" class="home_body">
-			<form action="/signup/" method="post">
-				<fieldset>
-					<div id="home_form">
+			<form action="/signup/" method="post" id="home_form">
+				<fieldset id="home_fieldset">
+					<div id="home_form_div">
 						<legend>Sign Up</legend>
 						<label for="home_signup_username">Username:</label>
 						<input type="text" id="home_signup_username", name="username" required>

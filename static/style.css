@@ -4,6 +4,7 @@
 	width:99vw;
 	border-radius:10px;
 	padding-top:0%;
+	border:2px solid #333333;
 }
 #nav_button_home {
 	overflow:visible;
@@ -23,8 +24,11 @@
 .nav_button {
 	text-align:center;
 	top: 50%;
-	transform: translateY(6.25%);
-	border-left:5px solid #666666;
+	transform: translateY(3%);
+	border-top:3px solid #87708b;
+	border-bottom:3px solid #87708b;
+	border-right:3px solid #87708b;
+	border-left:6px solid #333333;
 	background-color:#A992AD;
 	transition:background-color 0.6s;
 	height:80%;
@@ -47,7 +51,11 @@
 
 #login_status {
 	float:right;
+	transition:background-color 0.6s;
 	background-color:#12ef43;
+}
+#login_status:hover {
+	background-color:#6e21da;
 }
 #login_box {
 	background:linear-gradient(to bottom right,rgba(50,50,50,0.2),rgba(200,200,200,0.2));
@@ -65,6 +73,7 @@
 #home_body_left {
 	float:left;
 	background:linear-gradient(to bottom right, #3992a0, #777777);
+	position:relative;
 }
 #home_body_right {
 	float:right;
@@ -77,6 +86,10 @@
 	background:#F88995;
 	box-shadow:4px 4px 5px #99aa99;
 	font-size:200%;
+	border:1px solid #333333;
+}
+#home_fieldset {
+	border:none;
 }
 
 
@@ -111,6 +124,7 @@
 	background:linear-gradient(#3992a0, #eeeeee);
 	box-shadow:4px 4px 5px #99aa99;
 	font-size:200%;
+	border:1px solid #333333;
 }
 #compare_panel_left {
 	float:left;
