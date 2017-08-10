@@ -15,69 +15,10 @@
 	width: 100px;
 	height:110%
 }
-#login_status {
-	float:right;
-	background-color:#12ef43;
-}
-#home_body_left {
-	float:left;
-	background:linear-gradient(to bottom right, #3992a0, #777777);
-}
-#home_body_right {
-	float:right;
-	background:linear-gradient(to bottom left, #3992a0, #777777);
-}
-#compare_panel_left {
-	float:left;
-}
-#compare_panel_right {
-	float:right;
-}
 #nav_break {
 	width:1px;
 	height:100%;
 	margin-left:none;
-}
-#stats_panel {
-	width:99vw;
-	height:80vh;
-	background:#999999;
-	background:linear-gradient(#aaaaaa, #888888);
-}
-#login_box {
-	background:linear-gradient(to bottom right,rgba(50,50,50,0.2),rgba(200,200,200,0.2));
-	width:20vw;
-	height:50vh;
-	transform:translate(0,20vh);
-	text-align:center;
-	margin:auto;
-	border-radius:10px;
-	border:2px solid black;
-}
-.stats_form_expense_operand {
-	text-align:center;
-	background-color:#dddddd;
-	width:1%;
-}
-.stats_form_expense_operand:hover {
-	cursor:pointer;
-}
-.home_body {
-	margin-top:1%;
-	width:45vw;
-	height:60vh;
-	background:#F88995;
-	box-shadow:4px 4px 5px #99aa99;
-	font-size:200%;
-}
-.compare_panel {
-	margin-top:1%;
-	width:45vw;
-	height:60vh;
-	background:#F88995;
-	background:linear-gradient(#3992a0, #eeeeee);
-	box-shadow:4px 4px 5px #99aa99;
-	font-size:200%;
 }
 .nav_button {
 	text-align:center;
@@ -93,14 +34,93 @@
 	border-radius:10px;
 	margin:none;
 	font-family: 'Didact Gothic', sans-serif;
+	text-align:center;
 	display:inline-block;
 	vertical-align:top;
-	text-align:center;
 }
 .nav_button:hover {
 	background-color:#00a7d1;
 	cursor:pointer;
 }
+
+
+
+#login_status {
+	float:right;
+	background-color:#12ef43;
+}
+#login_box {
+	background:linear-gradient(to bottom right,rgba(50,50,50,0.2),rgba(200,200,200,0.2));
+	width:20vw;
+	height:50vh;
+	transform:translate(0,20vh);
+	text-align:center;
+	margin:auto;
+	border-radius:10px;
+	border:2px solid black;
+}
+
+
+
+#home_body_left {
+	float:left;
+	background:linear-gradient(to bottom right, #3992a0, #777777);
+}
+#home_body_right {
+	float:right;
+	background:linear-gradient(to bottom left, #3992a0, #777777);
+}
+.home_body {
+	margin-top:1%;
+	width:45vw;
+	height:60vh;
+	background:#F88995;
+	box-shadow:4px 4px 5px #99aa99;
+	font-size:200%;
+}
+
+
+
+#stats_panel {
+	border-radius:10px;
+	margin:auto;
+	margin-top:1%;
+	width:79vw;
+	height:60vh;
+	background:#999999;
+	background:linear-gradient(#aaaaaa, #888888);
+}
+.stats_form_expense_operand {
+	text-align:center;
+	background-color:#dddddd;
+	width:1%;
+	display:inline-block;
+	vertical-align:top;
+	float:right;
+
+}
+.stats_form_expense_operand:hover {
+	cursor:pointer;
+}
+
+.compare_panel {
+	margin-top:1%;
+	width:45vw;
+	height:60vh;
+	background:#F88995;
+	background:linear-gradient(#3992a0, #eeeeee);
+	box-shadow:4px 4px 5px #99aa99;
+	font-size:200%;
+}
+#compare_panel_left {
+	float:left;
+}
+#compare_panel_right {
+	float:right;
+}
+
+
+
 body {
 	font-family: 'Didact Gothic', sans-serif;
 	background-image:url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTExIVFRUXFRcXFxUXFxcXFxcXFxcXFxUXFxUYHSggGBolHRcXITEiJSkrLi4uFx8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAJcBTQMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAJRABAQEAAAQEBwAAAAAAAAAAAAERAiFhcRJBsfAxUYGRocHR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOprEjQIKkBUFgFISJaBU+o0CYQWASGoSgJaqAoAC6gAmBAVUkUEBQSrE9ACFVkBcFBDFiUFSooCaKAAC6ImguKgC6i6gAFAMReoEi6mqBiUqQFwNAFTACggFIYoIqgJF1FA1MACUKlBaYGgokAVExdAAwFiaAJq1CAQtwalgFKgBSmAGoLIAL3ALGbV0BLFlQBZFIgLCmpYCShVBGpUhQKqALiUQFJQACKCLiFoCatAJBFkBcTfstoAzq1AAi0CFKYBRU0DTAkAkKSgGiADWoAjSACiYCLhSAQpFBKomAaVeSUAtXUAJExdBUVANEgCylCQCAoCUoAUgCpFJASJb1U5AEKQDhilqAqWgAVFkAXCJgBTSwEUANNWpQMWJoBVSACoQAIugJhIWgVL+1IAg1gJwwWpgKzqkBFMXQSUCUBUAIWl+RnYCQ1ZUgLYlNQCqSmgLIYgGKlSAasDQWiSAAQBaixAVKWoCpIVoEUvM0BlU0F1LFMBYmLpgEZ0UEaQAxcEAVJFgILSAJEWgqBARaWgBSe+gCoWkBmRqBQA7gCooEQAVNVkF00gC0IWgiLF0EQUD0WCAM1ooEgEAsAAFQCgsATUq6AvDSmghUMBZCqmAFL3ARcF0DUMABS0EtFZBagAatOFZQTP6pEtAsRfiAJ4TFBUKUBNUAhFlTAKaVYCKRIAFASGmAKYugHQwZ8UAnC0nv8ABYAGoCww0ANwwADFoFCoBakqoCkDhAVAAADUkWwkAwVIAWpV0AgYAbp6GAKi4BOqaGgmlFkAVCgsSlAKe/IXn5AmloAmrQAVABQAEAIgAsiaoBQALUsUAnIACQtADmaABKAEABSoAqACWEUApoAYaAIsADUwAf/Z");
