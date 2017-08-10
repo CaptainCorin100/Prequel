@@ -70,7 +70,7 @@ def add_allowed_user(username, allowed_username):
     return True
 
 def check_user_allowed(username, target_username):
-    sql = sql = 'SELECT `username` FROM `users` WHERE `target_username`="{}"'
+    sql = sql = 'SELECT `username` FROM `users` WHERE `allowed_username`="{}"'
     cursor.execute(sql.format(target_username))
     result = cursor.fetchone()
     print(result.get("username"))
