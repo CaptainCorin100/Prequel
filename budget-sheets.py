@@ -14,13 +14,13 @@ def cleanhtml(raw_html): #Clean html function using regex. Found on stack overfl
 
 #class to contain expenses retreived from the database
 class Expense:
-    this.val_type = ""
-    this.name = ""
-    this.cost = ""
-    def __init__(this, val_type, name, cost):
-        this.val_type = val_type
-        this.name = name
-        this.cost = cost
+    self.val_type = ""
+    self.name = ""
+    self.cost = ""
+    def __init__(self, val_type, name, cost):
+        self.val_type = val_type
+        self.name = name
+        self.cost = cost
 
 #database interface abstraction functions
 def check_login(username, password):
