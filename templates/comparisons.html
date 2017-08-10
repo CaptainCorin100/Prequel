@@ -18,19 +18,32 @@
 		</div>
 
 		<div id="compare_panel_left" class="compare_panel">
-			<div id="compare_left_chart"></div>
-				<fieldset id="compare_sheet_expense">
-					<legend>Expenditures</legend>
-					<div id="compare_sheet_expense_row0">
-						<label>Expense Category:</label>
-						<input type="text" name="type0" id="compare_sheet_expense_type0" readonly value="{{type}}">
-						<label>Expense Name:</label>
-						<input type="text" name="name0" id="compare_sheet_name0" readonly value="{{name}}">
-						<label>Cost:</label>
-						<input type="number" name="cost0" id="compare_sheet_cost0" readonly value="{{cost}}">
-					</div>
-				</fieldset>
+			<fieldset id="compare_sheet_expense">
+				<legend>Expenditures</legend>
+				<div id="compare_sheet_expense_row0">
+					<label>Expense Category:</label>
+					<input type="text" name="type0" id="compare_sheet_expense_type0" readonly value="{{type}}">
+					<label>Expense Name:</label>
+					<input type="text" name="name0" id="compare_sheet_name0" readonly value="{{name}}">
+					<label>Cost:</label>
+					<input type="number" name="cost0" id="compare_sheet_cost0" readonly value="{{cost}}">
+				</div>
+			</fieldset>
+			<div id="compare_left_chart"></div>	
 		</div>
-		<div id="compare_panel_right" class="compare_panel"><div id="compare_right_chart"></div></div>
+		<div id="compare_panel_right" class="compare_panel">
+			<fieldset id="compare_sheet_expense">
+				<legend>Expenditures</legend>
+				<div id="compare_sheet_expense_row0">
+					<label>Expense Category:</label>
+					<input type="text" name="type0" id="compare_sheet_expense_type0" readonly value="{{type}}">
+					<label>Expense Name:</label>
+					<input type="text" name="name0" id="compare_sheet_name0" readonly value="{{name}}">
+					<label>Cost:</label>
+					<input type="number" name="cost0" id="compare_sheet_cost0" readonly value="{{cost}}">
+				</div>
+			</fieldset>
+			<div id="compare_right_chart"></div>
+		</div>
 	</body>	
 </html>
