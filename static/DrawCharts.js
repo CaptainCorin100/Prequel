@@ -2,7 +2,19 @@ google.charts.load('current', {packages: ['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 var users = [["National Average",666,"#43d1b2","National Average"],["You",999,"#a55221","You"]];
-var types = [["food", 50, "#21ed43"], ["appliances", 100, "#443322"], ["luxuries", 22, "#659811"]];
+var types = [];
+
+window.onload = function () {
+	console.log (document.getElementsByClassName("compare_type_inputs").length);
+	for (var p = 0; p < document.getElementsByClassName("compare_type_inputs").length; p++) {
+		var temp = [];
+		temp.push(document.getElementsByClassName("compare_type_inputs")[p].children[3]);
+		temp.push(document.getElementsByClassName("compare_type_inputs")[p].children[5]);
+		temp.push("#333333");
+		types.push (temp);
+	}
+	console.log (types);
+}
 var count = 0;
 var values = [];
 
