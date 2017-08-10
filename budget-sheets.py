@@ -35,6 +35,8 @@ def create_user_account(username, email, password):
 def add_cost(username, val_type, name, cost):
     sql = 'INSERT INTO `budget-values` (`username`, `type`, `name`, `cost`) VALUES ("{}", "{}", "{}", "{}")'
     cursor.execute(sql.format(username, val_type, name, cost))
+    db.commit()
+    return True
 
 #flask application urls and functions
 @app.route("/")
