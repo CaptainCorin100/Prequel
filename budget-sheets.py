@@ -135,7 +135,7 @@ def budget_setup():
             costs = request.form.getlist("cost")
             output = "Types: {}, Names: {}, Costs: {}"
             print(output.format(types, names, costs))
-            for i in range (0, len(types)-1):
+            for i in range (0, len(types)):
                 add_net_income(username, income)
                 add_cost(username, types[i], names[i], costs[i])
             return redirect(url_for("index"))
