@@ -162,7 +162,7 @@ def budget_compare_user():
         if request.method == "POST":
             username = session["username"]
             requested_username = request.form["username"]
-            if (check_user_allowed(username, requested_username)):
+            if (check_user_allowed(requested_username, username)):
                 user_expenses = get_expenses(username)
                 req_expenses = get_expenses(requested_username)
                 return render_template("comparisons.html", expenses_1=user_expenses, expenses_2=req_expenses, login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
