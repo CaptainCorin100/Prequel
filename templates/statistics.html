@@ -10,9 +10,10 @@
 	</head>
 	<body>
 		<div id="nav">
-			<a href="home.html" id="nav_button_home"><div class="nav_button"><p>Home</p></div></a>
-			<a href="statistics.html" id="nav_button_update"><div class="nav_button"><p>Update Self</p></div></a>
-			<a href="comparisons.html" id="nav_button_compare"><div class="nav_button"><p>Compare</p></div></a>
+			<a href="/home/" id="nav_button_home"><div class="nav_button"><p>Home</p></div></a>
+			<a href="/budget/setup/" id="nav_button_update"><div class="nav_button"><p>Input</p></div></a>
+			<a href="/budget/comparison/" id="nav_button_compare"><div class="nav_button"><p>Compare</p></div></a>
+			<div class="nav_button" id="login_status">{{login_status|safe}}</div>
 		</div>
 
 		<div id="stats_panel">
@@ -34,8 +35,8 @@
 						</select>
 						<label>Expense Name:</label>
 						<input type="text" name="name0" id="stats_form_name0">
-						<label>Cost:</label>
-						<input type="number" name="cost0" id="stats_form_cost0">
+						<label>Cost(£):</label>
+						<input type="number" name="cost0" id="stats_form_cost0" step=0.01>
 					</div>
 				</fieldset>
 				<div class="stats_form_expense_operand" id="stats_form_expense_plus" OnClick="push()"><p>+</p></div>

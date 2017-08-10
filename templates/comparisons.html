@@ -3,20 +3,34 @@
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="/static/style.css">
+		<link rel="stylesheet" type="text/css" href="static/style.css">
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-		<script type="text/javascript" src="/static/DrawCharts.js">
+		<script type="text/javascript" src="static/DrawCharts.js">
 		</script>
 		<title>Budget-Sheets</title>
 	</head>
 	<body>
 		<div id="nav">
-			<a href="home.html" id="nav_button_home"><div class="nav_button"><p>Home</p></div></a>
-			<a href="statistics.html" id="nav_button_update"><div class="nav_button"><p>Update Self</p></div></a>
-			<a href="comparisons.html" id="nav_button_compare"><div class="nav_button"><p>Compare</p></div></a>
+			<a href="/home/" id="nav_button_home"><div class="nav_button"><p>Home</p></div></a>
+			<a href="/budget/setup/" id="nav_button_update"><div class="nav_button"><p>Input</p></div></a>
+			<a href="/budget/comparison/" id="nav_button_compare"><div class="nav_button"><p>Compare</p></div></a>
+			<div class="nav_button" id="login_status">{{login_status|safe}}</div>
 		</div>
 
-		<div id="compare_panel_left" class="compare_panel"><div id="compare_left_chart"></div></div>
+		<div id="compare_panel_left" class="compare_panel">
+			<div id="compare_left_chart"></div>
+				<fieldset id="compare_sheet_expense">
+					<legend>Expenditures</legend>
+					<div id="compare_sheet_expense_row0">
+						<label>Expense Category:</label>
+						<input type="text" name="type0" id="compare_sheet_expense_type0" readonly value="{{type}}">
+						<label>Expense Name:</label>
+						<input type="text" name="name0" id="compare_sheet_name0" readonly value="{{name}}">
+						<label>Cost:</label>
+						<input type="number" name="cost0" id="compare_sheet_cost0" readonly value="{{cost}}">
+					</div>
+				</fieldset>
+		</div>
 		<div id="compare_panel_right" class="compare_panel"><div id="compare_right_chart"></div></div>
 	</body>	
 </html>

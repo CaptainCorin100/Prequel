@@ -116,6 +116,10 @@
 	cursor:pointer;
 }
 
+
+#compare_sheet_expense {
+	font-size:90%;
+}
 .compare_panel {
 	margin-top:1%;
 	width:45vw;
@@ -123,7 +127,6 @@
 	background:#F88995;
 	background:linear-gradient(#3992a0, #eeeeee);
 	box-shadow:4px 4px 5px #99aa99;
-	font-size:200%;
 	border:1px solid #333333;
 }
 #compare_panel_left {
@@ -140,6 +143,7 @@ body {
 	background-image:url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTExIVFRUXFRcXFxUXFxcXFxcXFxcXFxUXFxUYHSggGBolHRcXITEiJSkrLi4uFx8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAJcBTQMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAJRABAQEAAAQEBwAAAAAAAAAAAAERAiFhcRJBsfAxUYGRocHR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOprEjQIKkBUFgFISJaBU+o0CYQWASGoSgJaqAoAC6gAmBAVUkUEBQSrE9ACFVkBcFBDFiUFSooCaKAAC6ImguKgC6i6gAFAMReoEi6mqBiUqQFwNAFTACggFIYoIqgJF1FA1MACUKlBaYGgokAVExdAAwFiaAJq1CAQtwalgFKgBSmAGoLIAL3ALGbV0BLFlQBZFIgLCmpYCShVBGpUhQKqALiUQFJQACKCLiFoCatAJBFkBcTfstoAzq1AAi0CFKYBRU0DTAkAkKSgGiADWoAjSACiYCLhSAQpFBKomAaVeSUAtXUAJExdBUVANEgCylCQCAoCUoAUgCpFJASJb1U5AEKQDhilqAqWgAVFkAXCJgBTSwEUANNWpQMWJoBVSACoQAIugJhIWgVL+1IAg1gJwwWpgKzqkBFMXQSUCUBUAIWl+RnYCQ1ZUgLYlNQCqSmgLIYgGKlSAasDQWiSAAQBaixAVKWoCpIVoEUvM0BlU0F1LFMBYmLpgEZ0UEaQAxcEAVJFgILSAJEWgqBARaWgBSe+gCoWkBmRqBQA7gCooEQAVNVkF00gC0IWgiLF0EQUD0WCAM1ooEgEAsAAFQCgsATUq6AvDSmghUMBZCqmAFL3ARcF0DUMABS0EtFZBagAatOFZQTP6pEtAsRfiAJ4TFBUKUBNUAhFlTAKaVYCKRIAFASGmAKYugHQwZ8UAnC0nv8ABYAGoCww0ANwwADFoFCoBakqoCkDhAVAAADUkWwkAwVIAWpV0AgYAbp6GAKi4BOqaGgmlFkAVCgsSlAKe/IXn5AmloAmrQAVABQAEAIgAsiaoBQALUsUAnIACQtADmaABKAEABSoAqACWEUApoAYaAIsADUwAf/Z");
 }
 input[type=text] {
+	width:100px;
 	transition:box-shadow 0.4s;
 	box-shadow:0px 0px 0px white;
 	border-bottom:2px solid #444444;
@@ -153,7 +157,23 @@ input[type=text]:focus {
 	background-color:#ffffff;
 	box-shadow:0px 0px 8px #43eda1;
 }
+input[type=number] {
+	width:100px;
+	transition:box-shadow 0.4s;
+	box-shadow:0px 0px 0px white;
+	border-bottom:2px solid #444444;
+	border-top:none;
+	border-right:none;
+	border-left:none;
+	background-color:#999999;
+}
+input[type=number]:focus {
+	outline:none;
+	background-color:#ffffff;
+	box-shadow:0px 0px 8px #43eda1;
+}
 input[type=password] {
+	width:100px;
 	transition:box-shadow 0.4s;
 	box-shadow:0px 0px 0px white;
 	border-bottom:2px solid #444444;
@@ -168,6 +188,7 @@ input[type=password]:focus {
 	box-shadow:0px 0px 8px #43eda1;
 }
 input[type=email] {
+	width:100px;
 	transition:box-shadow 0.4s;
 	box-shadow:0px 0px 0px white;
 	border-bottom:2px solid #444444;

@@ -3,7 +3,7 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart () {
 	var arrayShared = [["Group", "spent", {role:"style"},{role:"annotation"}]];
-	var users = [["a",6,"#ae2222","a"],["ee",999,"#ed2211","ee"]];
+	var users = [["National Average",6,"#ae2222","National Average"],["You",999,"#ed2211","You"]];
 	for (var i = 0; i < users.length; i++) {
 		arrayShared.push (users[i]);
 	}
