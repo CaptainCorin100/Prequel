@@ -4,7 +4,7 @@ import bcrypt
 import re
 
 app = Flask(__name__)
-db = pymysql.connect(host="localhost", user="budget-sheets", passwd="sheets-budget", db="budget-sheets", cursorclass=pymysql.cursors.DictCursor)
+db = pymysql.connect(host="192.168.0.51", user="budget-sheets", passwd="sheets-budget", db="budget-sheets", cursorclass=pymysql.cursors.DictCursor)
 cursor = db.cursor()
 
 def cleanhtml(raw_html): #Clean html function using regex. Found on stack overflow. Source: https://stackoverflow.com/questions/9662346/python-code-to-remove-html-tags-from-a-string#12982689
@@ -21,7 +21,7 @@ class Expense:
 
 #database interface abstraction functions
 #database interfaces for creating and checking user logins
-def check_login(username, password):
+def check_login(username, password): #get the password hash for the supplied username from the database, and then use bcrypt to check it against the supplied password
     sql = 'SELECT `password` FROM `users` WHERE `username`="{}"'
     print(sql.format(username))
     cursor.execute(sql.format(username))
