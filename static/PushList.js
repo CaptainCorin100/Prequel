@@ -11,7 +11,7 @@ function push () {
 						'</select>\n' +
 						'<label>Expense Name:</label>\n' +
 						'<input type="text" name="name" id="stats_form_netpay">\n' +
-						'<label>Cost:</label>\n'+
+						'<label>Cost(£):</label>\n'+
 						'<input type="number" name="cost" id="stats_form_netpay">';
 		div.id = "stats_form_expense_row" + ((document.getElementById("stats_form_expense").children.length-1).toString());
 		div.children[1].id = "stats_form_expense_type" + ((document.getElementById("stats_form_expense").children.length-1).toString());
