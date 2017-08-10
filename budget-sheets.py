@@ -38,6 +38,12 @@ def add_cost(username, val_type, name, cost):
     db.commit()
     return True
 
+def add_net_income(username, income):
+    sql = 'INSERT INTO `net-incomes` (`username`, `income`) VALUES ("{}", "{}")'
+    cursor.execute(sql.format(username, income))
+    db.commit()
+    return True
+
 #flask application urls and functions
 @app.route("/")
 def index():
@@ -86,12 +92,14 @@ def budget_setup():
     if ('username' in session):
         if request.method == "POST":
             username = session['username']
+            income = request.form["net_income"]
             types = request.form.getlist("type")
             names = request.form.getlist("name")
             costs = request.form.getlist("cost")
             output = "Types: {}, Names: {}, Costs: {}"
             print(output.format(types, names, costs))
             for i in range (0, len(types)-1):
+                add_net_income(username, income)
                 add_cost(username, types[i], names[i], costs[i])
             return redirect(url_for("index"))
         else:

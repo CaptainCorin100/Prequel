@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div id="nav">
-			<a href="/home/" id="nav_button_home"><div class="nav_button"><p>Home</p></div></a>
+			<a href="/" id="nav_button_home"><div class="nav_button"><p>Home</p></div></a>
 			<a href="/budget/setup/" id="nav_button_update"><div class="nav_button"><p>Input</p></div></a>
 			<a href="/budget/comparison/" id="nav_button_compare"><div class="nav_button"><p>Compare</p></div></a>
 			<div class="nav_button" id="login_status">{{login_status|safe}}</div>
@@ -21,7 +21,7 @@
 				<fieldset>
 					<legend>Net Income:</legend>
 					<label for="stats_form_netpay">Net Pay:</label>
-					<input type="text" name="Amount:" id="stats_form_netpay">
+					<input type="text" name="net_income" id="stats_form_netpay">
 				</fieldset>
 				<fieldset id="stats_form_expense">
 					<legend>Expenditures</legend>
