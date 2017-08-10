@@ -32,6 +32,9 @@ def create_user_account(username, email, password):
     db.commit()
     return True
 
+def add_cost(username, val_type, name, cost):
+    sql = 'INSERT INTO `budget-values` (`username`, `type`, `name`, `cost`) VALUES ("{}", "{}", "{}", "{}")'
+    cursor.execute(sql.format(username, val_type, name, cost))
 
 #flask application urls and functions
 @app.route("/")
@@ -78,14 +81,18 @@ def signup():
 #user planning pages urls.
 @app.route("/budget/setup/", methods=["GET", "POST"])
 def budget_setup():
-    if request.method == "POST":
-        types = request.form.getlist("type")
-        names = request.form.getlist("name")
-        costs = request.form.getlist("cost")
-        #print out all of the type values to check this works.
-        print(types)
+    if ('username' in session):
+        if request.method == "POST":
+            username = session['username']
+            types = request.form.getlist("type")
+            names = request.form.getlist("name")
+            costs = request.form.getlist("cost")
+            for (i in range len(types)):
+                add_cost(username, types[i], names[i], costs[i])
+        else:
+            return render_template("statistics.html")
     else:
-        return render_template("statistics.html")
+        return redirect(url_for("login"))
 
 app.secret_key = "b@*_dx$'\xbe\x91v\x1d\xd8M\xaeC\xee\xe4\x90J\x15\xc4%\x16(\x13'"
 
