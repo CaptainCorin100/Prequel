@@ -59,7 +59,7 @@ def get_expenses(username):
     results = cursor.fetchall()
     expenses = []
     for result in results:
-        expenses.append(Expense(result.get("type"), result.get("name") result.get("cost")))
+        expenses.append(Expense(result.get("type"), result.get("name"), result.get("cost")))
     return expenses
 
 #database functions for user viewing permissions
