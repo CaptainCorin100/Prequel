@@ -28,7 +28,6 @@ function drawChart () {
 	}
 
 	var arrayPersonal = [["Type", "bought", {role:"style"}]];
-	console.log (types);
 	for (var j = 0; j < types.length; j++) {
 		arrayPersonal.push(types[j]);
 	}
@@ -37,6 +36,19 @@ function drawChart () {
 	var options={title:"Expenditures",height:"100%",width:"100%",backgroundColor:{fill:"transparent"},animation:{"startup":true,duration:1000,"easing":"out"}};
 	var chart = new google.visualization.BarChart (document.getElementById ("compare_right_chart"));
 	chart.draw (data, options);
+
+	var highest = ["foo",0,"#444444"];
+	for (var re = 0; re < types.length; re++) {
+		if (types[re][1] > highest[1]) {
+			highest = types[re];
+		}
+	}
+	console.log (highest);
+	if (highest[0] == "Food") {
+		document.getElementById ("compare_personal_advice").value = "Good Spending! Keep it up!";
+	} else if (highest[0] == "Luxuries") {
+		document.getElementById ("compare_personal_advice").value = "Oh dear";
+	}
 
 	var data2 = google.visualization.arrayToDataTable(arrayPersonal);
 	var options2={title:"Expenditures",height:"100%",width:"100%",backgroundColor:{fill:"transparent"},slices:{0:{color:"#21cd21"},1:{color:"#999999"},2:{color:"#eddfed"}}};
