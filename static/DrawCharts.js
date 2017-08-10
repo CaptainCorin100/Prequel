@@ -8,8 +8,8 @@ window.onload = function () {
 	console.log (document.getElementsByClassName("compare_type_inputs").length);
 	for (var p = 0; p < document.getElementsByClassName("compare_type_inputs").length; p++) {
 		var temp = [];
-		temp.push(document.getElementsByClassName("compare_type_inputs")[p].children[3]);
-		temp.push(document.getElementsByClassName("compare_type_inputs")[p].children[5]);
+		temp.push(document.getElementsByClassName("compare_type_inputs")[p].children[1].value);
+		temp.push(document.getElementsByClassName("compare_type_inputs")[p].children[5].value);
 		temp.push("#333333");
 		types.push (temp);
 	}
@@ -28,6 +28,7 @@ function drawChart () {
 	}
 
 	var arrayPersonal = [["Type", "bought", {role:"style"}]];
+	console.log (types);
 	for (var j = 0; j < types.length; j++) {
 		arrayPersonal.push(types[j]);
 	}
