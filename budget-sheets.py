@@ -103,7 +103,7 @@ def budget_setup():
                 add_cost(username, types[i], names[i], costs[i])
             return redirect(url_for("index"))
         else:
-            return render_template("statistics.html")
+            return render_template("statistics.html", login_status="<p>Logged in as user " + session['username'] + '</p> <br> <a href="/logout/">Logout</a>')
     else:
         return redirect(url_for("login"))
 
