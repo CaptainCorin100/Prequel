@@ -120,7 +120,7 @@ def budget_setup():
     else:
         return redirect(url_for("login"))
 
-@app.route("/budget/compare/setup/" methods=["GET", "POST"])
+@app.route("/budget/compare/setup/", methods=["GET", "POST"])
 def budget_compare_setup():
     if ("username" in session):
         if request.method == "POST":
