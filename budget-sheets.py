@@ -14,9 +14,6 @@ def cleanhtml(raw_html): #Clean html function using regex. Found on stack overfl
 
 #class to contain expenses retreived from the database
 class Expense:
-    self.val_type = ""
-    self.name = ""
-    self.cost = ""
     def __init__(self, val_type, name, cost):
         self.val_type = val_type
         self.name = name
