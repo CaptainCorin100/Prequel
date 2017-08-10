@@ -107,6 +107,15 @@ def budget_setup():
     else:
         return redirect(url_for("login"))
 
+@app.route("/budget/compare/setup/" methods=["GET", "POST"])
+def budget_compare_setup():
+    if ("username" in session):
+        if request.method == "POST":
+            
+        return render_template("comparisons-setup.html", login_status="<p>Logged in as user " + session['username'] + '</p> <br> <a href="/logout/">Logout</a>')
+    else:
+        return redirect(url_for("index"))
+
 app.secret_key = "b@*_dx$'\xbe\x91v\x1d\xd8M\xaeC\xee\xe4\x90J\x15\xc4%\x16(\x13'"
 
 if (__name__ == "__main__"):
