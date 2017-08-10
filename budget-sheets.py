@@ -12,6 +12,16 @@ def cleanhtml(raw_html): #Clean html function using regex. Found on stack overfl
   cleantext = re.sub(cleanr, '', raw_html)
   return cleantext
 
+#class to contain expenses retreived from the database
+class Expense:
+    this.val_type = ""
+    this.name = ""
+    this.cost = ""
+    def __init__(this, val_type, name, cost):
+        this.val_type = val_type
+        this.name = name
+        this.cost = cost
+
 #database interface abstraction functions
 def check_login(username, password):
     sql = 'SELECT `password` FROM `users` WHERE `username`="{}"'
@@ -42,6 +52,9 @@ def add_net_income(username, income):
     sql = 'INSERT INTO `net-incomes` (`username`, `income`) VALUES ("{}", "{}")'
     cursor.execute(sql.format(username, income))
     db.commit()
+    return True
+
+def add_allowed_user(username, allowed_username):
     return True
 
 #flask application urls and functions
@@ -111,7 +124,7 @@ def budget_setup():
 def budget_compare_setup():
     if ("username" in session):
         if request.method == "POST":
-            
+            print("TOTO add username to allowed here.")
         return render_template("comparisons-setup.html", login_status="<p>Logged in as user " + session['username'] + '</p> <br> <a href="/logout/">Logout</a>')
     else:
         return redirect(url_for("index"))
