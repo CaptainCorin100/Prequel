@@ -5,7 +5,6 @@ var users = [["Friend",0,"#43d1b2","Friend"],["You",0,"#a55221","You"]];
 var types = [];
 
 window.onload = function () {
-	console.log (document.getElementsByClassName("compare_type_inputs").length);
 	for (var p = 0; p < document.getElementsByClassName("compare_type_inputs").length; p++) {
 		var temp = [];
 		temp.push(document.getElementsByClassName("compare_type_inputs")[p].children[1].value);
@@ -13,7 +12,6 @@ window.onload = function () {
 		temp.push("#333333");
 		types.push (temp);
 	}
-	console.log (types);
 }
 var count = 0;
 var values = [];
@@ -42,7 +40,7 @@ function drawChart () {
 			arrayShared.push (users[i]);
 		}
 	}
-
+	console.log (arrayShared);
 	var arrayPersonal = [["Type", "bought", {role:"style"}]];
 	for (var j = 0; j < types.length; j++) {
 		var changedOther = false;
@@ -68,7 +66,6 @@ function drawChart () {
 			highest = arrayPersonal[re];
 		}
 	}
-	console.log (arrayPersonal);
 	if (highest[0] == "food") {
 		document.getElementById ("compare_personal_advice").value = "Good Spending! Keep it up!";
 	} else if (highest[0] == "luxuries") {
