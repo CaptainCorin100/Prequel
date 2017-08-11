@@ -39,7 +39,7 @@
 			<fieldset id="compare_sheet_expense">
 				<legend>Expenditures</legend>
 				{% for expense in expenses_2 %}
-				<div id="compare_sheet_expense_row0">
+				<div id="compare_sheet_expense_row0" class="friend_status">
 					<label>Expense Category:</label>
 					<input type="text" name="type0" id="compare_sheet_expense_type0" readonly value="{{expense.val_type}}">
 					<label>Expense Name:</label>
