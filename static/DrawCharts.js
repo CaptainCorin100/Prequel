@@ -25,16 +25,16 @@ function drawChart () {
 		var line = users[i];
 		if (i == 0) {
 			var total = 0;
-			for (var erf = 0; erf < document.getElementsByClassName ("personal_stats").length; erf++) {
-				total += parseInt(document.getElementsByClassName ("personal_stats")[erf].value);
+			for (var erf = 0; erf < document.getElementsByClassName ("friend_stats").length; erf++) {
+				total += parseInt(document.getElementsByClassName ("friend_stats")[erf].value);
 			}
 			line [1] = total;
 			arrayShared.push (users[i]);
 		}
 		if (i == 1) {
 			var total = 0;
-			for (var erf = 0; erf < document.getElementsByClassName ("friend_stats").length; erf++) {
-				total += parseInt(document.getElementsByClassName ("friend_stats")[erf].value);
+			for (var erf = 0; erf < document.getElementsByClassName ("personal_stats").length; erf++) {
+				total += parseInt(document.getElementsByClassName ("personal_stats")[erf].value);
 			}
 			line [1] = total;
 			arrayShared.push (users[i]);
