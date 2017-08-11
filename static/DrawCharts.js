@@ -9,7 +9,7 @@ window.onload = function () {
 	for (var p = 0; p < document.getElementsByClassName("compare_type_inputs").length; p++) {
 		var temp = [];
 		temp.push(document.getElementsByClassName("compare_type_inputs")[p].children[1].value);
-		temp.push(document.getElementsByClassName("compare_type_inputs")[p].children[5].value);
+		temp.push(parseInt(document.getElementsByClassName("compare_type_inputs")[p].children[5].value));
 		temp.push("#333333");
 		types.push (temp);
 	}
@@ -33,7 +33,7 @@ function drawChart () {
 		for (var e = 1; e < arrayPersonal.length; e++) {
 			if (types[j][0] == arrayPersonal[e][0]) {
 				changedOther = true;
-				parseInt(arrayPersonal[e][1]) += parseInt(types[j][1]);
+				arrayPersonal[e][1] += types[j][1];
 			}
 		}
 		if (!changedOther) {
