@@ -66,7 +66,7 @@ def get_expenses(username):
 #function definition and comment not applicable to current master branch. placeholder for creating a dev branch to test features
 #remove all expenses for a user. Use for updating all user expenses instead of only adding new ones. Requires old expenses to be put into the template at render.
 def remove_expenses(username):
-    sql = 'DELETE FROM `budget-values` WHERE `username="{}"'
+    sql = 'DELETE FROM `budget-values` WHERE `username`="{}"'
     cursor.execute(sql.format(username))
     db.commit()
 
