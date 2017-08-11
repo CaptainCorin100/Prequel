@@ -24,7 +24,23 @@ var values = [];
 function drawChart () {
 	var arrayShared = [["Group", "spent", {role:"style"},{role:"annotation"}]];
 	for (var i = 0; i < users.length; i++) {
-		arrayShared.push (users[i]);
+		var line = users[i];
+		if (i == 0) {
+			var total = 0;
+			for (var erf = 0; erf < document.getElementsByClassName ("personal_stats").length; erf++) {
+				total += document.getElementsByClassName ("personal_stats")[erf];
+			}
+			line [1] == total;
+			arrayShared.push (users[i]);
+		}
+		if (i == 1) {
+			var total = 0;
+			for (var erf = 0; erf < document.getElementsByClassName ("friend_stats").length; erf++) {
+				total += document.getElementsByClassName ("friend_stats")[erf];
+			}
+			line [1] == total;
+			arrayShared.push (users[i]);
+		}
 	}
 
 	var arrayPersonal = [["Type", "bought", {role:"style"}]];
