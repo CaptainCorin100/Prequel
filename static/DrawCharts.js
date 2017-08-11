@@ -33,7 +33,7 @@ function drawChart () {
 		for (var e = 1; e < arrayPersonal.length; e++) {
 			if (types[j][0] == arrayPersonal[e][0]) {
 				changedOther = true;
-				arrayPersonal[e][1] += types[j][1];
+				parseInt(arrayPersonal[e][1]) += parseInt(types[j][1]);
 			}
 		}
 		if (!changedOther) {
@@ -47,7 +47,7 @@ function drawChart () {
 	chart.draw (data, options);
 
 	var highest = ["foo",0,"#444444"];
-	for (var re = 0; re < arrayPersonal.length; re++) {
+	for (var re = 1; re < arrayPersonal.length; re++) {
 		if (arrayPersonal[re][1] > highest[1]) {
 			highest = arrayPersonal[re];
 		}
