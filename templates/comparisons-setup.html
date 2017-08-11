@@ -27,7 +27,7 @@
 					<label>Expense Name:</label>
 					<input type="text" name="name0" id="compare_sheet_name0" readonly value="{{expense.name}}">
 					<label>Cost:</label>
-					<input type="number" name="cost0" id="compare_sheet_cost0" readonly value="{{expense.cost}}">
+					<input type="number" name="cost0" id="compare_sheet_cost0" readonly value="{{expense.cost}}" class="personal_stats">
 				</div>
 				{% endfor %}
 			</fieldset>
@@ -46,7 +46,7 @@
 				<label>Compare your budget with another user if allowed</label>
 				<input type="text" name="username">
 				<br>
-				<input type="submit">
+				<input type="submit" onClick='drawChart()'>
 			</form>
 			<div id="compare_right_chart"></div>
 		</div>
