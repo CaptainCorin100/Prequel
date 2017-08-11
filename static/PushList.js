@@ -22,7 +22,7 @@ function push () {
 	div.children[3].name = "name";	
 	div.children[5].name = "cost";
 	document.getElementById("stats_form_expense").appendChild (div);
-	//document.getElementById("stats_panel").
+	document.getElementById("stats_panel").style.paddingBottom += "1%";
 }
 function remove () {
 	if (document.getElementById("stats_form_expense").children.length > 1) {

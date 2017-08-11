@@ -44,9 +44,9 @@ function drawChart () {
 		}
 	}
 	console.log (highest);
-	if (highest[0] == "Food") {
+	if (highest[0] == "food") {
 		document.getElementById ("compare_personal_advice").value = "Good Spending! Keep it up!";
-	} else if (highest[0] == "Luxuries") {
+	} else if (highest[0] == "luxuries") {
 		document.getElementById ("compare_personal_advice").value = "Oh dear";
 	}
 
