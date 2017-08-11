@@ -47,12 +47,12 @@ function drawChart () {
 	chart.draw (data, options);
 
 	var highest = ["foo",0,"#444444"];
-	for (var re = 0; re < types.length; re++) {
-		if (types[re][1] > highest[1]) {
-			highest = types[re];
+	for (var re = 0; re < arrayPersonal.length; re++) {
+		if (arrayPersonal[re][1] > highest[1]) {
+			highest = arrayPersonal[re];
 		}
 	}
-	console.log (highest);
+	console.log (arrayPersonal);
 	if (highest[0] == "food") {
 		document.getElementById ("compare_personal_advice").value = "Good Spending! Keep it up!";
 	} else if (highest[0] == "luxuries") {
