@@ -26,7 +26,7 @@ function drawChart () {
 		if (i == 0) {
 			var total = 0;
 			for (var erf = 0; erf < document.getElementsByClassName ("personal_stats").length; erf++) {
-				total += document.getElementsByClassName ("personal_stats")[erf].value;
+				total += parseInt(document.getElementsByClassName ("personal_stats")[erf].value);
 			}
 			line [1] = total;
 			arrayShared.push (users[i]);
@@ -34,7 +34,7 @@ function drawChart () {
 		if (i == 1) {
 			var total = 0;
 			for (var erf = 0; erf < document.getElementsByClassName ("friend_stats").length; erf++) {
-				total += document.getElementsByClassName ("friend_stats")[erf].value;
+				total += parseInt(document.getElementsByClassName ("friend_stats")[erf].value);
 			}
 			line [1] = total;
 			arrayShared.push (users[i]);
