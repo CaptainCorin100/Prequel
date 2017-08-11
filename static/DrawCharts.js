@@ -24,12 +24,11 @@ function drawChart () {
 	for (var i = 0; i < users.length; i++) {
 		var line = users[i];
 		if (i == 0) {
-			console.log (document.getElementsByClassName("personal_stats"));
 			var total = 0;
 			for (var erf = 0; erf < document.getElementsByClassName ("personal_stats").length; erf++) {
 				total += document.getElementsByClassName ("personal_stats")[erf].value;
 			}
-			line [1] == total;
+			line [1] = total;
 			arrayShared.push (users[i]);
 		}
 		if (i == 1) {
@@ -37,7 +36,7 @@ function drawChart () {
 			for (var erf = 0; erf < document.getElementsByClassName ("friend_stats").length; erf++) {
 				total += document.getElementsByClassName ("friend_stats")[erf].value;
 			}
-			line [1] == total;
+			line [1] = total;
 			arrayShared.push (users[i]);
 		}
 	}
