@@ -1,7 +1,7 @@
 google.charts.load('current', {packages: ['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
-var users = [["National Average",666,"#43d1b2","National Average"],["You",999,"#a55221","You"]];
+var users = [["Friend",0,"#43d1b2","Friend"],["You",0,"#a55221","You"]];
 var types = [];
 
 window.onload = function () {
