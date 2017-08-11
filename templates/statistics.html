@@ -30,10 +30,10 @@
 					<div id="stats_form_expense_row0">
 						<label>Expense Category:</label>
 						<select id="stats_form_expense_type0" name="type">
-							<option value="food"{{% if expense.val_type == "food" %}}selected{{% endif %}}>Food</option>
-							<option value="appliances"{{% if expense.val_type == "appliances" %}}selected{{% endif %}}>Appliances</option>
-							<option value="luxuries"{{% if expense.val_type == "luxuries" %}}selected{{% endif %}}>Luxuries</option>
-							<option value="other"{{% if expense.val_type == "other" %}}selected{{% endif %}}>Other</option>
+							<option value="food" {% if expense.val_type == "food" %}selected{% endif %}>Food</option>
+							<option value="appliances" {% if expense.val_type == "appliances" %}selected{% endif %}>Appliances</option>
+							<option value="luxuries" {% if expense.val_type == "luxuries" %}selected{% endif %}>Luxuries</option>
+							<option value="other" {% if expense.val_type == "other" %}selected{% endif %}>Other</option>
 						</select>
 						<label>Expense Name:</label>
 						<input type="text" name="name" id="stats_form_name0" value="{{expense.name}}">
