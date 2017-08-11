@@ -29,7 +29,16 @@ function drawChart () {
 
 	var arrayPersonal = [["Type", "bought", {role:"style"}]];
 	for (var j = 0; j < types.length; j++) {
-		arrayPersonal.push(types[j]);
+		var changedOther = false;
+		for (var e = 1; e < arrayPersonal.length; e++) {
+			if (types[j][0] == arrayPersonal[e][0]) {
+				changedOther = true;
+				arrayPersonal[e][1] += types[j][1];
+			}
+		}
+		if (!changedOther) {
+ 			arrayPersonal.push(types[j]);
+ 		}
 	}
 
 	var data = google.visualization.arrayToDataTable(arrayShared);
