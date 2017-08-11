@@ -25,6 +25,23 @@
 				</fieldset>
 				<fieldset id="stats_form_expense">
 					<legend>Expenditures</legend>
+					{% if expenses %}
+					{% for expense in expenses %}
+					<div id="stats_form_expense_row0">
+						<label>Expense Category:</label>
+						<select id="stats_form_expense_type0" name="type" value="{{expense.val_type}}">
+							<option value="food">Food</option>
+							<option value="appliances">Appliances</option>
+							<option value="luxuries">Luxuries</option>
+							<option value="other">Other</option>
+						</select>
+						<label>Expense Name:</label>
+						<input type="text" name="name" id="stats_form_name0" value="{{expense.name}}">
+						<label>Cost(£):</label>
+						<input type="number" name="cost" id="stats_form_cost0" value="{{expense.cost}}" step=0.01>
+					</div>
+					{% endfor %}
+					{% else %}
 					<div id="stats_form_expense_row0">
 						<label>Expense Category:</label>
 						<select id="stats_form_expense_type0" name="type">
@@ -38,6 +55,7 @@
 						<label>Cost(£):</label>
 						<input type="number" name="cost" id="stats_form_cost0" step=0.01>
 					</div>
+					{% endif %}
 				</fieldset>
 				<div class="stats_form_expense_operand" id="stats_form_expense_plus" OnClick="push()"><p>+</p></div>
 				<div class="stats_form_expense_operand" OnClick="remove()"><p>-</p></div>
