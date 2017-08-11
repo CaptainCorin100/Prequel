@@ -63,8 +63,12 @@ def get_expenses(username):
         expenses.append(Expense(result.get("type"), result.get("name"), result.get("cost")))
     return expenses
 
-#function definition and comment not applicable to current master branch. placeholder for creating a dev branch to test features.
-#remove all expenses for a user. Use for updating user expenses instead of 
+#function definition and comment not applicable to current master branch. placeholder for creating a dev branch to test features
+#remove all expenses for a user. Use for updating all user expenses instead of only adding new ones. Requires old expenses to be put into the template at render.
+def remove_expenses(username):
+    sql = 'DELETE FROM `budget-values` WHERE `username`="{}"'
+    cursor.execute(sql.format(username))
+    db.commit()
 
 #database functions for user viewing permissions
 def add_allowed_user(username, allowed_username):
@@ -139,12 +143,17 @@ def budget_setup():
             costs = request.form.getlist("cost")
             output = "Types: {}, Names: {}, Costs: {}"
             print(output.format(types, names, costs))
+            remove_expenses(username)
             for i in range (0, len(types)):
                 add_net_income(username, income)
                 add_cost(username, types[i], names[i], costs[i])
             return redirect(url_for("index"))
         else:
-            return render_template("statistics.html", login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
+            user_expenses = get_expenses(session["username"])
+            if (len(user_expenses) > 0):
+                return render_template("statistics.html", expenses=user_expenses, login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
+            else:
+                return render_template("statistics.html", login_status="<p>Logged in as user " + session['username'] + '</p><a href="/logout/">Logout</a>')
     else:
         return redirect(url_for("login"))
 

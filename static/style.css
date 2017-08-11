@@ -103,6 +103,7 @@
 	height:60vh;
 	background:#999999;
 	background:linear-gradient(#aaaaaa, #888888);
+	padding:1%;
 }
 .stats_form_expense_operand {
 	text-align:center;
